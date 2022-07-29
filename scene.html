@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Quidditch</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Let's play quidditch</h1>
+    
+    <h3>Time</h3>
+    <p>Click on the golden snitch to catch it.</p>
+    <img src="dementor.gif" class="dementor">
+    <div class="container">
+      <img src="snitch.gif" class="snitch">
+    </div>
+    
+
+
+    <script>
+    function changePos() {
+      var topPos = Math.random()*500;
+      var leftPos = Math.random()*800;
+      $('.container').css('top', topPos);
+      $('.container').css('left', leftPos);
+    }
+    $('.container').hover(changePos);
+    $('.snitch').hover(changePos);
+      
+      function caught() {
+        $('.snitch').css('height', '400px');
+        $('.snitch').attr('src', 'snitch.png');
+        $('.snitch').off();
+        $('.container').off();
+        $('.demetor').css('width', '600px');
+      }
+      $('.snitch').click(caught);
+      
+      function gameover() {
+        $('.dementor').click(gameover);
+      }
+      function timer() {
+        
+      }
+      var seconds = setInterval(timer, 20)
+    </script>
+    
+  </body>
+</html>
+<script type="application/javascript" src="/share.js"></script>
